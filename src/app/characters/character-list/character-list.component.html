@@ -1,15 +1,25 @@
+<form class="form-inline">
+	<h1 class="display-4">CRUDy D&D Characters</h1>
+	<input class="form-control" name="searchInput" id="search" placeholder="Search" #searchInput="ngModel" [(ngModel)]="searchText">
+	<button class="btn btn-secondary" (click)="searchText=''">X</button>
+</form>
 <table class="table table-hover">
 	<thead>
 		<th>Name</th>
-		<th>Class and Level</th>
-		<th>Actions</th>
-		<th></th>		
+		<th>Class</th>
+		<th>Race</th>
+		<th>Level</th>	
+		<th><button id="create" class="btn btn-outline-primary" (click)="openModal()">Create Character</button></th>	
 	</thead>
 	<tbody>
-		<tr *ngFor="let char of list">
-			<td (click)="onEdit(char)">{{char.fullName}}</td>
-			<td (click)="onEdit(char)">{{char.class}}, {{char.level}}</td>		
-			<td><a class="btn text-danger" (click)="onDelete(char.id)"><i class="fa fa-trash"></i></a></td>
-		</tr>
+		<ng-container *ngFor="let char of list">
+			<tr *ngIf="filterCondition(char)">
+				<td (click)="onEdit(char)">{{char.fullName}}</td>
+				<td (click)="onEdit(char)">{{char.class}}</td>		
+				<td (click)="onEdit(char)">{{char.race}}</td>
+				<td (click)="onEdit(char)">{{char.level}}</td>				
+				<td><a class="btn btn-outline-danger" (click)="onDelete(char.id)">Delete Character</a></td>
+			</tr>
+		</ng-container>  
 	</tbody>
 </table>

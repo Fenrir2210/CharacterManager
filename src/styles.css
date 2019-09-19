@@ -15,3 +15,18 @@ table.table-hover tbody tr:hover
 {
 	cursor: pointer;
 }
+
+.custom-dialog-container .mat-dialog-container 
+{
+    padding: 10px !important;
+}
+
+#search {
+	position: relative;
+	margin-left: 120px;
+}
+
+#create {
+
+	width:auto;margin:auto;position: relative;
+}

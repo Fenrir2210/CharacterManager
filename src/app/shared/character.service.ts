@@ -14,4 +14,9 @@ export class CharacterService {
   {
   	return this.firestore.collection('characters').snapshotChanges(); //returns an observable from our database
   }
+
+  getAvatars(){
+      return this.firestore.collection('avatars').snapshotChanges()
+  }
+
 }
