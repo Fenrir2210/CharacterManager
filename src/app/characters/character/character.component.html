@@ -1,6 +1,6 @@
 <h1 class="display-4">Character Manager</h1>
 <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-	<input type="hidden" name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName">
+	<input type="hidden" name="id" #fullName="ngModel" [(ngModel)]="service.formData.id">
 
 	<div class="form-group">
 		<input name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control" placeholder="Name" required>
